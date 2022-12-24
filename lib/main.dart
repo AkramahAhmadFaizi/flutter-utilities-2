@@ -24,9 +24,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Utils App"),
-        backgroundColor: Colors.teal,),
+      // appBar: AppBar(
+      //   title: Text("Utils App"),
+      //   backgroundColor: Colors.teal,),
       body: TabBarr(),
     );
   }
@@ -60,6 +60,19 @@ class _TabBarrState extends State<TabBarr>
         appBar: AppBar(
           title: Text("Tab Bar"),
           backgroundColor: Colors.green,
+          bottom: TabBar(
+          controller: tabController,
+          tabs: [
+            Tab(
+              text: ("fdsakljf"),
+              icon: Icon(Icons.favorite),
+            ),
+            Tab(
+              text: ("dfasdf"),
+              icon: Icon(Icons.book),
+            )
+          ],
+        ),
         ),
         body: TabBarView(
           children: [
@@ -68,22 +81,22 @@ class _TabBarrState extends State<TabBarr>
           ],
           controller: tabController,
         ),
-        bottomNavigationBar: Material(
-          color: Colors.teal,
-          child: TabBar(
-            controller: tabController,
-            tabs: [
-              Tab(
-                text: ("fdsakljf"),
-                icon: Icon(Icons.favorite),
-              ),
-              Tab(
-                text: ("dfasdf"),
-                icon: Icon(Icons.book),
-              )
-            ],
-          ),
-        )
+        // bottomNavigationBar: Material(
+        //   color: Colors.teal,
+        //   child: TabBar(
+        //     controller: tabController,
+        //     tabs: [
+        //       Tab(
+        //         text: ("fdsakljf"),
+        //         icon: Icon(Icons.favorite),
+        //       ),
+        //       Tab(
+        //         text: ("dfasdf"),
+        //         icon: Icon(Icons.book),
+        //       )
+        //     ],
+        //   ),
+        // )
     );
 
   }
@@ -96,7 +109,9 @@ class NewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(title),
+        child: Text(title, style: TextStyle(
+          fontSize: 30.0,
+        ),),
       ),
     );
   }
